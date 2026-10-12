@@ -1,0 +1,62 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de Privacidade — Backup do parque</title><link rel="stylesheet" href="_base.css">
+<main>
+<h1>Política de Privacidade</h1>
+<p class="sub">Aplicativo “Backup do parque” · BMS Prisma · vigente desde 12 de outubro de 2026</p>
+
+<h2>O que é este aplicativo</h2>
+<p>“Backup do parque” é uma configuração da ferramenta de código aberto
+<a href="https://rclone.org">rclone</a> usada pela BMS Prisma para enviar, de forma
+automatizada, cópias de segurança dos seus próprios servidores para o Google Drive.</p>
+<p>Ele não tem interface, não tem cadastro e não é oferecido a terceiros. Os únicos
+usuários são os operadores da própria BMS Prisma, autorizando acesso à sua própria conta.</p>
+
+<h2>A que dados ele acessa</h2>
+<p>O aplicativo solicita um único escopo do Google:</p>
+<p><code>https://www.googleapis.com/auth/drive.file</code></p>
+<p>Esse escopo é deliberadamente o mais estreito possível para a função. Ele dá acesso
+<strong>exclusivamente aos arquivos que o próprio aplicativo criou</strong> no Google Drive —
+as pastas de backup e seu conteúdo.</p>
+<div class="nao">
+<p><strong>O que o aplicativo não consegue acessar</strong>, por limitação imposta pelo
+próprio Google e não por promessa nossa: qualquer outro arquivo, pasta, documento, foto ou
+dado existente no Google Drive do usuário. Arquivos que ele não criou são invisíveis para ele.</p>
+</div>
+
+<h2>O que ele faz com esses dados</h2>
+<ul>
+  <li>Envia arquivos de backup gerados nos servidores da BMS Prisma para uma pasta do
+      Google Drive do operador.</li>
+  <li>Lê de volta esses mesmos arquivos para conferir, por soma de verificação, que
+      chegaram íntegros.</li>
+  <li>Remove arquivos de backup antigos, segundo a política de retenção configurada.</li>
+</ul>
+<p>É só isso. Não há nenhuma outra operação.</p>
+
+<h2>Para onde os dados vão</h2>
+<p>Para lugar nenhum além do Google Drive da própria conta que autorizou o acesso. Os dados
+não passam por servidores nossos intermediários, não são enviados a terceiros, não são
+vendidos, não são usados para publicidade, não alimentam nenhum modelo e não são analisados.</p>
+
+<h2>Credenciais</h2>
+<p>O token de acesso fica armazenado em arquivo de permissão restrita nos servidores da BMS
+Prisma. O escopo <code>drive.file</code> é escolhido justamente para que, mesmo no pior caso
+de alguém obter esse token, o alcance fique limitado às pastas de backup criadas pelo
+aplicativo — e não ao restante da conta.</p>
+
+<h2>Retenção</h2>
+<p>Os backups seguem uma janela de 30 dias de cópias diárias e 12 cópias mensais. Fora
+dessa janela, os arquivos são apagados automaticamente da pasta do aplicativo.</p>
+
+<h2>Como revogar o acesso</h2>
+<p>A qualquer momento, em
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+removendo o aplicativo “Backup do parque”. A revogação é imediata e interrompe todo acesso.</p>
+
+<h2>Alterações e contato</h2>
+<p>Mudanças nesta política passam a valer na data indicada no topo desta página.
+Dúvidas: <strong>edeilson.s@gmail.com</strong>.</p>
+
+<footer>BMS Prisma · <a href="index.html">Políticas</a> · <a href="termos.html">Termos de Serviço</a></footer>
+</main></html>
